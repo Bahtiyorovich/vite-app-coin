@@ -1,6 +1,8 @@
 const Main = () => {
   return (
-    <div>Main</div>
+    <div className="row-span-5 col-span-4">
+      
+    </div>
   )
 }
 

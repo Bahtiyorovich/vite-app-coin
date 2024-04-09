@@ -2,6 +2,8 @@ import { PiTidalLogo } from "react-icons/pi";
 import { MdGroupAdd } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
 import { FaUserSecret } from "react-icons/fa"
+import { FaChalkboardTeacher } from "react-icons/fa";
+import { PiStudentBold } from "react-icons/pi";
 
 export const data = [
   {
@@ -25,3 +27,17 @@ export const data = [
     link: '/my-account',
   },
 ]
+
+export const mentors = [
+  {
+    title: "Mentors",
+    icon: FaChalkboardTeacher,
+    count: '110',
+  },
+  {
+    title: "Pupils",
+    icon: PiStudentBold,
+    count: '1105',
+  },
+]
+

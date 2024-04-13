@@ -6,6 +6,7 @@ import Example from './bar.jsx';
 import { Mentors } from './mentors';
 import DiagramLine from './diagram-line';
 import { Pupils } from './pupils.jsx';
+import { CarouselCustomNavigation } from './categories.jsx';
 
 
 const AllInformation = () => {
@@ -15,7 +16,9 @@ const AllInformation = () => {
           <Card key={item.title} item={item}/>
       ))}
 
-      <div className="col-span-2 rounded-md bg-white"></div>
+      <div className="h-[150px] col-span-2 rounded-md bg-white">
+        <CarouselCustomNavigation/>
+      </div>
 
       <div className={`${styles.gridY} flex flex-col gap-4`}>
         <DiagramLine/>

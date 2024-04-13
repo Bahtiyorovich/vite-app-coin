@@ -14,14 +14,7 @@ const Navbar = () => {
       </div>
 
       <div className={`${styles.flexX} gap-4`}>
-        <div className={`${styles.flexX} gap-2 bg-white rounded-md w-[250px] h-10 px-4 border-2 hover:border-indigo-500`}>
-          <BsSearch className="cursor-pointer" />
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent p-2 h-8 w-40 outline-none"
-          />
-        </div>
+       
         <div className={`${styles.flexX} justify-between  px-4 bg-white rounded-md w-[120px] h-12`}>
           <div className="text-xl" onClick={handleDarkMode}>
             {darkMode ? <BsMoonStars /> :<LuSunMoon /> }

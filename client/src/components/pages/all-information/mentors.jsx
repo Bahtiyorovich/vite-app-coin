@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import { LuPencil } from "react-icons/lu";
 import { FaUserPlus } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
@@ -26,13 +26,17 @@ const TABS = [
     value: "all",
   },
   {
-    label: "Monitored",
-    value: "monitored",
+    label: "Web",
+    value: "web",
   },
   {
-    label: "Unmonitored",
-    value: "unmonitored",
+    label: "En",
+    value: "en",
   },
+  {
+    label: "Ru",
+    value: "ru",
+  }
 ];
  
 const TABLE_HEAD = ["Member", "Function", "Status", "Employed", ""];
@@ -66,26 +70,70 @@ const TABLE_ROWS = [
     date: "19/09/17",
   },
   {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-    name: "Michael Levi",
-    email: "michael@creative-tim.com",
-    job: "Programator",
-    org: "Developer",
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "Soli",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
     online: true,
-    date: "24/12/08",
+    date: "23/04/18",
   },
   {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
-    name: "Richard Gran",
-    email: "richard@creative-tim.com",
-    job: "Manager",
-    org: "Executive",
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Vali",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
     online: false,
-    date: "04/10/21",
+    date: "23/04/18",
   },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Ali",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
+  
 ];
  
 export function Mentors() {
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const [itemsPerPage] = useState(5);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = TABLE_ROWS.slice(indexOfFirstItem, indexOfLastItem);
+  const nPages = Math.ceil(TABLE_ROWS.length / itemsPerPage);
+  
+  const goToNextPage = () => {
+    if(currentPage !== nPages) 
+        setCurrentPage(currentPage + 1)
+  }
+
+  const goToPrevPage = () => {
+    if(currentPage !== 1) 
+        setCurrentPage(currentPage - 1)
+  }
+
+  const filteredItems = currentItems.filter((item) =>
+    Object.values(item).some(
+      (value) =>
+        typeof value === "string" &&
+        value.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+
   return (
     <Card className="h-[100vh] w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none ">
@@ -121,6 +169,7 @@ export function Mentors() {
             <Input
               label="Search"
               icon={<IoIosSearch className="h-5 w-5" />}
+              onChange={handleSearch}
             />
           </div>
         </div>
@@ -146,13 +195,13 @@ export function Mentors() {
             </tr>
           </thead>
           <tbody>
-            {TABLE_ROWS.map(
+            {filteredItems.map(
               ({ img, name, email, job, org, online, date }, index) => {
-                const isLast = index === TABLE_ROWS.length - 1;
+                const isLast = index === filteredItems.length - 1;
                 const classes = isLast
                   ? "p-4"
                   : "p-4 border-b border-blue-gray-50";
- 
+
                 return (
                   <tr key={name}>
                     <td className={classes}>
@@ -222,23 +271,27 @@ export function Mentors() {
                     </td>
                   </tr>
                 );
-              },
+              }
             )}
           </tbody>
         </table>
       </CardBody>
       <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
         <Typography variant="small" color="blue-gray" className="font-normal">
-          Page 1 of 10
+          Page {currentPage} of {nPages}
         </Typography>
         <div className="flex gap-2">
-          <Button variant="outlined" size="sm">
+          <Button variant="outlined" size="sm" 
+          onClick={goToPrevPage}>
             Previous
           </Button>
-          <Button variant="outlined" size="sm">
+          <Button variant="outlined" size="sm" 
+          onClick={goToNextPage}>
             Next
           </Button>
         </div>
+
+
       </CardFooter>
     </Card>
   );

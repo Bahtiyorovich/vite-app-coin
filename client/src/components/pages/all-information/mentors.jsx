@@ -96,6 +96,114 @@ const TABLE_ROWS = [
     online: false,
     date: "19/09/17",
   },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "John Michael",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
+    online: true,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Alexa Liras",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: false,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Laurent Perrier",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "Soli",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
+    online: true,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Vali",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: false,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Ali",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "John Michael",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
+    online: true,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Alexa Liras",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: false,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Laurent Perrier",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+    name: "Soli",
+    email: "john@creative-tim.com",
+    job: "Manager",
+    org: "Organization",
+    online: true,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+    name: "Vali",
+    email: "alexa@creative-tim.com",
+    job: "Programator",
+    org: "Developer",
+    online: false,
+    date: "23/04/18",
+  },
+  {
+    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+    name: "Ali",
+    email: "laurent@creative-tim.com",
+    job: "Executive",
+    org: "Projects",
+    online: false,
+    date: "19/09/17",
+  },
   
 ];
  
@@ -147,9 +255,6 @@ export function Mentors() {
             </Typography>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-            <Button variant="outlined" size="sm">
-              view all
-            </Button>
             <Button className="flex items-center gap-3" size="sm">
               <FaUserPlus strokeWidth={2} className="h-4 w-4" /> Add mentor
             </Button>
@@ -281,8 +386,11 @@ export function Mentors() {
           Page {currentPage} of {nPages}
         </Typography>
         <div className="flex gap-2">
-          <Button variant="outlined" size="sm" 
-          onClick={goToPrevPage}>
+          <Button 
+            variant="outlined" 
+            size="sm" 
+            onClick={goToPrevPage}
+          >
             Previous
           </Button>
           <Button variant="outlined" size="sm" 

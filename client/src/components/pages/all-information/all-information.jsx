@@ -6,12 +6,12 @@ import Example from './bar.jsx';
 import { Mentors } from './mentors';
 import DiagramLine from './diagram-line';
 import { Pupils } from './pupils.jsx';
-import { CarouselCustomNavigation } from './categories.jsx';
+import { CarouselCustomNavigation } from './carousel.jsx';
 
 
 const AllInformation = () => {
   return (
-    <div className='grid grid-cols-4  gap-4'>
+    <div className='w-full grid grid-cols-4  gap-4'>
       { mentors.map(item => (
           <Card key={item.title} item={item}/>
       ))}

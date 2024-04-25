@@ -22,6 +22,9 @@ module.exports = withMT({
           900: "#141414"
         }
       },
+      transitionDuration: {
+        '2000': '2000ms',
+      }
     },
   },
   plugins: [],

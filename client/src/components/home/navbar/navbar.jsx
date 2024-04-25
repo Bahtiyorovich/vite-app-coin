@@ -4,12 +4,15 @@ import { useTheme } from "../../../helpers/dark-mode";
 import { User } from "../../../assets";
 import { styles } from "../../../constants/styles";
 
-const Navbar = () => {
+const Navbar = ({ handleMenu}) => {
   const { darkMode, handleDarkMode } = useTheme();
 
   return (
-    <div className={`col-span-4 row-span-1 p-2 ${styles.flexX} justify-between h-12`}>
-      <div className={`bg-white rounded-md ${styles.flexX} justify-center p-2 w-8 h-8 cursor-pointer text-2xl`}>
+    <div className={`p-2 ${styles.flexX} justify-between h-12 mb-4`}>
+      <div 
+        className={`bg-white rounded-md ${styles.flexX} justify-center p-2 w-8 h-8 cursor-pointer text-2xl`}
+        onClick={handleMenu}
+        >
         <LuMenu />
       </div>
 

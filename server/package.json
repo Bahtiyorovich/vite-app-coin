@@ -1,44 +1,28 @@
 {
-  "name": "express-tutorial",
+  "name": "server",
   "version": "1.0.0",
   "description": "Expressjs tutorials",
-  "main": "index.mjs",
+  "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "nodemon ./src/index.mjs",
-    "start": "node ./src/index.mjs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Bahtiyorovich/Express-tutorial.git"
+    "dev":"nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Bahtiyorovich/Express-tutorial/issues"
-  },
-  "homepage": "https://github.com/Bahtiyorovich/Express-tutorial#readme",
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "connect-mongo": "^5.1.0",
-    "cookie-parser": "^1.4.6",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.18.3",
-    "express-session": "^1.18.0",
-    "express-validator": "^7.0.1",
-    "mongoose": "^8.2.3",
-    "passport": "^0.7.0",
-    "passport-discord": "^0.1.4",
-    "passport-local": "^1.0.0"
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.5",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.3",
-    "@babel/node": "^7.23.9",
-    "@babel/preset-env": "^7.24.3",
-    "@types/jest": "^29.5.12",
-    "jest": "^29.7.0",
     "nodemon": "^3.1.0"
-  },
-  "type": "module"
+  }
 }
